@@ -1,0 +1,957 @@
+/* variables */
+$primary: white;
+$secondary: rgb(255, 245, 245);
+
+/* componentes */
+$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+
+@font-face {
+  font-family: 'MiFuente';
+  src: url('../main/fonts/Nightmare\ Before\ Christmas.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MiFuente2';
+  src: url('../main/fonts/AmaticSC-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'MiFuente3';
+  src: url('../main/fonts/CormorantGaramond-SemiBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Mifuente4';
+  src: url('../main/fonts/CormorantGaramond-LightItalic.ttf');
+}
+
+@mixin banner {
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin sizes ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-center-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@mixin radial-gradient($start-color, $end-color) {
+  background: radial-gradient(circle, $start-color 0%, $end-color 100%);
+}
+
+@mixin linea {
+  height: 1.9px;
+  grid-column: 2 / 4;
+  grid-row: 1;
+  margin-top: 10px;
+}
+
+/* start index*/
+#bannerInicial {
+  @include banner;
+  text-align: center;
+  position: relative;
+  background-image: url(../main/assets/Images/black-hole-animated.webp);
+}
+
+#tittle {
+  position: relative;
+  color: $primary;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+  font-family: 'MiFuente', sans-serif;
+
+  &-timburton {
+    font-size: 180px;
+  }
+}
+
+.navbar {
+  font-family: 'MiFuente2', sans-serif;
+}
+
+.video-fondo {
+  @include sizes (100%, 1000px);
+  border: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+  @include flex-center-center-center;
+
+  video {
+    @include sizes (100%, 100%);
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .subtitle {
+    position: relative;
+    color: $primary;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+    font-family: 'Mifuente', sans-serif;
+
+    h2 {
+      font-size: 80px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/* css html contacto */
+#bannerContacto {
+  @include banner;
+  background-image: url(../main/assets/Images/contacto.npg.jpg);
+  flex-direction: column;
+
+  #contacto {
+    font-family: 'MiFuente', sans-serif;
+    color: $secondary;
+    font-size: 100px;
+    text-shadow: 1px 1px 8px rgba(158, 155, 155, 0.747);
+  }
+
+}
+
+form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 600px;
+
+  label {
+    font-family: 'MiFuente3';
+    font-size: 30px;
+    font-weight: bold;
+    display: inline;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    padding: 3px 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: $primary;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: block;
+    color: $primary;
+    background-color: #3a3939;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  textarea {
+    height: 100px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+  }
+
+
+}
+
+
+.letra-blanca {
+  color: rgb(224, 223, 223);
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.lblFormulario {
+  color: #ffffffb6;
+}
+
+
+
+/* start footer */
+footer {
+  display: flex;
+  background-color: #adadad;
+  justify-content: space-around;
+
+  .tittle-footer {
+    font-family: 'MiFuente2';
+    padding: 20px;
+
+    h2 {
+      font-size: 50px;
+    }
+  }
+
+  .firma {
+    font-family: 'MiFuente3';
+    text-align: center;
+    padding: 20px;
+  }
+
+  .redesociales {
+    font-family: 'MiFuente3';
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    margin-right: 10px;
+    color: #000;
+
+    a {
+      color: inherit;
+    }
+
+    i:hover {
+      font-size: 35px;
+      transition: 0.3s;
+    }
+  }
+}
+
+/* end footer */
+
+/* start html biografia */
+.fondo-color {
+  @include radial-gradient(rgb(41, 41, 41), #000000);
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-family: 'MiFuente', sans-serif;
+    color: $secondary;
+    text-shadow: 1px 1px 8px rgba(158, 155, 155, 0.747);
+    font-size: 60px;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .fondo-biografia {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 100px;
+
+    .imagetim {
+      @include sizes (600px, 800px);
+      grid-column: 1 /2;
+      grid-row: 1;
+      margin-top: 90px;
+      margin-left: 50px;
+      @include sizes (650px, auto);
+
+      img {
+        object-fit: cover;
+        @include sizes (100%, auto);
+        border-radius: 10%;
+      }
+    }
+
+    .personal {
+      margin-top: 100px;
+      margin-left: 30px;
+      font-size: 30px;
+      color: #f6f6f6;
+      grid-column: 2 / 4;
+      grid-row: 1;
+
+    }
+
+    h3 {
+      font-size: 40px;
+      line-height: 1.8;
+      font-family: 'MiFuente3';
+      text-align: left;
+      margin: 30px;
+    }
+
+    p {
+      font-size: 30px;
+      font-family: 'MiFuente4';
+      line-height: 1.2;
+      margin: 30px;
+    }
+
+    .infancia {
+      width: 100%;
+      color: #f6f6f6;
+      grid-column: 1 / 4;
+      grid-row: 3/ 3;
+      text-align: justify;
+      margin-top: 100px;
+
+      .infancia-biografia {
+        font-size: 40px;
+        line-height: 1.8;
+        font-family: 'MiFuente3';
+        text-align: center;
+      }
+
+
+    }
+
+    .obras {
+      width: 100%;
+      color: #f6f6f6;
+      grid-column: 1 / 4;
+      grid-row: 4 / 4;
+      text-align: justify;
+      margin-top: 100px;
+
+      .obras-biografia {
+        font-size: 40px;
+        line-height: 1.8;
+        font-family: 'MiFuente3';
+        text-align: center;
+      }
+    }
+  }
+}
+
+/* end biogrfía */
+
+/* start filmografía */
+.body-filmografia {
+  @include radial-gradient(rgb(41, 41, 41), #000000);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .subtittle-filmografia {
+    color: #f6f6f6;
+    line-height: 1.8;
+    font-family: 'MiFuente3';
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .txt {
+    color: #f6f6f6;
+    font-family: 'MiFuente4';
+    font-size: 30px;
+    line-height: 1.5;
+    margin-left: 50px;
+    margin-right: 30px;
+    text-align: justify;
+  }
+
+  h1 {
+    font-family: 'MiFuente', sans-serif;
+    color: $secondary;
+    text-shadow: 1px 1px 8px rgba(158, 155, 155, 0.747);
+    font-size: 60px;
+    margin-top: 100px;
+    text-align: center;
+  
+  }
+
+  .subtittle-container {
+    display: grid;
+    margin-top: 80px;
+
+    .linea {
+      @include linea;
+      background: linear-gradient(90deg, rgba(18, 18, 18, 1) 5%, rgba(255, 255, 255, 1) 62%);
+    }
+
+    .linea-1990 {
+      @include linea;
+      background: linear-gradient(90deg, rgb(46, 46, 46) 5%, rgba(255, 255, 255, 1) 62%);
+    }
+
+    .linea-2010 {
+      @include linea;
+      background: linear-gradient(90deg, rgb(80, 80, 80) 5%, rgba(255, 255, 255, 1) 62%);
+    }
+
+    .subtittle-año {
+      color: #f6f6f6;
+      font-family: 'MiFuente3';
+      font-size: 45px;
+      margin-left: 30px;
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  .articulo {
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+
+    /* vincent */
+    .vincent {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .container-image-vincent {
+      margin-left: 50px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+
+      .img-vincent {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /* frank */
+    .frankenweenie {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-frank {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+
+      .img-frank {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /* pee-wee */
+    .pee-wee {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-pee-wee {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+
+      .img-pee-wee {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /* beetlejuice */
+    .beetle-juice {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-beetle {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-beetle {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /* batman */
+    .batman {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-batman {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-batman {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /* edward */
+    .edward {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-edward {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-edward {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* batman returns */
+    .batman-returns {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-batman-returns {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+      @include sizes (450px, auto);
+
+      .img-batman-returns {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /* the nightmare*/
+    .the-nightmare {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-the-nightmare {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-the-nightmare {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* ed wood*/
+    .ed-wood {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-ed-wood {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+      @include sizes (450px, auto);
+
+      .img-ed-wood {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /* batman-forever*/
+    .batman-forever {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-batman-forever {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-batman-forever {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* james and the giant peach*/
+    .james {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-james {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+
+      .img-james {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /*mars attacks*/
+    .mars-attacks {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-mars {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-mars {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* sleepy hollow*/
+    .sleepy-hollow {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-sleepy {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+      @include sizes (450px, auto);
+
+      .img-sleepy {
+        @include sizes (100%, auto);
+      }
+    }
+
+    /*el planeta de los simios*/
+    .el-planeta {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-planeta {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-planeta {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* big fish*/
+    .big-fish {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-big {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+
+      .img-big {
+        @include sizes (100%, auto);
+      }
+    }
+
+    /*charlie and the chocolate factory*/
+    .charlie {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-charlie {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-charlie {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* corpse bride*/
+    .corpse-bride {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-corpse {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+
+      .img-corpse {
+        @include sizes (100%, auto);
+      }
+    }
+
+    /* sweeney-todd */
+    .sweeney-todd {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-sweeney {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+
+      .img-sweeney {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* nine*/
+    .nine {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-nine {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+
+      .img-nine {
+        @include sizes (100%, auto);
+      }
+    }
+
+    /* alicia */
+    .alicia {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-alicia {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-alicia {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* dark shadows*/
+    .dark {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-dark {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-dark {
+        @include sizes (100%, auto);
+      }
+    }
+
+    /* abraham */
+    .abraham {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-abraham {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (500px, auto);
+
+      .img-abraham {
+        @include sizes(100%, auto);
+
+      }
+    }
+
+    /* big eyes*/
+    .big-eyes {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-big {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+      @include sizes (400px, auto);
+
+      .img-big {
+        @include sizes (100%, auto);
+      }
+    }
+
+    /* peregrine */
+    .peregrine {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+
+    .image-peregrine {
+      margin-right: 30px;
+      grid-column: 2 / 4;
+      grid-row: 1;
+      @include sizes (700px, auto);
+
+      .img-peregrine {
+        @include sizes(100%, auto);
+      }
+    }
+
+    /* dumbo*/
+    .dumbo {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    .image-dumbo {
+      margin-left: 30px;
+      grid-column: 1 / 2;
+      grid-row: 1;
+      @include sizes (450px, auto);
+
+      .img-dumbo {
+        @include sizes (100%, auto);
+      }
+
+    }
+
+    @media screen and (max-width: 600px) {
+      .txt-foto {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .imge {
+        object-fit: cover;
+      }
+
+      .container-image {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+
+  }
+
+  .filmografia {
+    margin-bottom: 100px;
+  }
+}
+
+/* end filmografia */
+
+/* start exposicion*/
+
+.tittle-mundo {
+  position: absolute;
+  right: 15%;
+  top: 3.5rem;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  font-family: 'MiFuente', sans-serif;
+  font-size: 50px;
+  text-shadow: 1px 1px 8px rgba(24, 23, 23, 0.747);
+}
+
+.carousel-item {
+  @include sizes (100%, 100vh);
+ 
+  .d-block {
+    @include sizes(100%, 100vh);
+  }
+  .img-mundo{
+    object-fit: cover;
+  }
+  .parrafo-mundo{
+    @include radial-gradient(rgb(41, 41, 41), #0000006c);
+   text-align: justify;
+  }
+}
+.carouselExampleFade{
+  .img-mundo{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hamburguesa {
+    background-color: white;
+  }
+
+  .fondo-color {
+    .fondo-biografia {
+      width: 100%;
+      display: block;
+      grid-gap: 0;
+      margin-bottom: 0;
+
+      .personal {
+        margin-top: 0;
+        margin-left: 0;
+        font-size: 0;
+        color: #f6f6f6;
+      }
+
+      .imagetim {
+        width: 0;
+        height: 0;
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .carouselExampleCaptions{
+    @include sizes (100%, 70%);
+  }
+  .carousel-item {
+    @include sizes (100%, auto);
+   
+    .d-block {
+      @include sizes(100%, auto);
+    }
+  }
+  .tittle-mundo {
+    font-size: 20px;
+  }
+  #bannerContacto {
+    background-size: 100% 50vh;
+  }
+  
+  .formulario{
+    width: 300px;
+  }
+}
+
